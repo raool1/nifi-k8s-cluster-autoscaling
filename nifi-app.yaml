@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nifi
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://cetic.github.io/helm-charts           # ✅ Public Helm repo
+    chart: nifi                                             # ✅ NiFi chart name
+    targetRevision: 0.1.4                                   # ✅ Specific chart version
+    helm:
+      valueFiles:
+        - https://raw.githubusercontent.com/raool1/nifi-k8s-cluster-autoscaling/main/nifi-secure.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
