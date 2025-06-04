@@ -30,17 +30,11 @@ nifi:
         memory: "1Gi"
 
   propertiesOverrides:
-    # TLS passwords
     nifi.security.keystorePasswd: changeMe
     nifi.security.keyPasswd: changeMe
     nifi.security.truststorePasswd: changeMe
-
-    # Explicit HTTPS configuration
     nifi.web.https.port: 8443
     nifi.web.https.host: 0.0.0.0
-
-    # Optional: disable HTTP (if you're going fully secure)
-    # nifi.web.http.port: ""
 
 persistence:
   enabled: true
@@ -48,7 +42,10 @@ persistence:
   size: 10Gi
 
 service:
-service:
   type: LoadBalancer
-  port: 8443
+
+zookeeper:
+  image:
+    repository: zookeeper
+    tag: 3.8.1
 
