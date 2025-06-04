@@ -11,7 +11,7 @@ spec:
     targetRevision: 0.1.4                                   # ✅ Specific chart version
     helm:
       valueFiles:
-        - https://raw.githubusercontent.com/raool1/nifi-k8s-cluster-autoscaling/main/nifi-secure.yaml
+        - https://raw.githubusercontent.com/raool1/nifi-k8s-cluster-autoscaling/master/nifi-secure.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
