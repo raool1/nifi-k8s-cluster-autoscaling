@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: nifi-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: nifi-cluster
+    kind: StatefulSet
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  triggers:
+    - type: cpu
+      metricType: Utilization
+      metadata:
+        value: "50"
+
