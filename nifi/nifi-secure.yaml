@@ -44,8 +44,8 @@ persistence:
 service:
   type: LoadBalancer
 
-# Zookeeper image values at root level (not nested)
+# Updated Zookeeper image values at root level (not nested)
 image:
-  repository: gcr.io/google_samples/k8szk
-  tag: v3
+  repository: bitnami/zookeeper
+  tag: 3.8.1
 
