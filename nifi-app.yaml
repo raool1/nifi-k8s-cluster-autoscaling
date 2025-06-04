@@ -8,13 +8,10 @@ spec:
   source:
     repoURL: https://github.com/raool1/nifi-k8s-cluster-autoscaling.git
     targetRevision: HEAD
-    path: .
+    path: nifi                      # 👈 Path to your local chart in repo
     helm:
       valueFiles:
-        - nifi-secure.yaml
-    chart: nifi
-    repoURL: https://cetic.github.io/helm-charts
-    targetRevision: 0.1.4
+        - nifi-secure.yaml          # 👈 File inside that `nifi/` folder
   destination:
     server: https://kubernetes.default.svc
     namespace: default
@@ -22,6 +19,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
 
