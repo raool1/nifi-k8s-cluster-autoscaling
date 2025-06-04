@@ -46,6 +46,6 @@ service:
 
 # Updated Zookeeper image values at root level (not nested)
 image:
-  repository: bitnami/zookeeper
-  tag: 3.8
+  repository: zookeeper
+  tag: 3.8.1
 
