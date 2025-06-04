@@ -44,8 +44,8 @@ persistence:
 service:
   type: LoadBalancer
 
-# Updated Zookeeper image values at root level (not nested)
-image:
-  repository: zookeeper
-  tag: 3.8.1
+zookeeper:
+  image:
+    repository: zookeeper
+    tag: 3.8.1
 
