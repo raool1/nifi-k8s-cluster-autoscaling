@@ -1,4 +1,4 @@
-kapiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nifi
@@ -6,14 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/raool1/nifi-k8s-cluster-autoscaling.git  # ✅ Your Git repo
+    repoURL: https://github.com/raool1/nifi-k8s-cluster-autoscaling.git
     targetRevision: HEAD
-    path: '.'                                                            # ✅ Root folder
+    path: .
     helm:
       valueFiles:
-        - nifi-secure.yaml                                               # ✅ Local file in repo
+        - nifi-secure.yaml
     chart: nifi
-    repoURL: https://cetic.github.io/helm-charts                         # ✅ External Helm repo
+    repoURL: https://cetic.github.io/helm-charts
     targetRevision: 0.1.4
   destination:
     server: https://kubernetes.default.svc
