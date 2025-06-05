@@ -47,5 +47,5 @@ service:
 zookeeper:
   image:
     repository: confluentinc/cp-zookeeper
-    tag: 3.8.1
+    tag: 7.5.0
 
