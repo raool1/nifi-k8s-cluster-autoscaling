@@ -48,4 +48,6 @@ zookeeper:
   image:
     repository: confluentinc/cp-zookeeper
     tag: 7.5.0
+    pullPolicy: Always
 
+  
