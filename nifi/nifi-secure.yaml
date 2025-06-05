@@ -46,6 +46,6 @@ service:
 
 zookeeper:
   image:
-    repository: bitnami/zookeeper
+    repository: confluentinc/cp-zookeeper
     tag: 3.8.1
 
