@@ -46,6 +46,6 @@ service:
 
 zookeeper:
   image:
-    repository: zookeeper
+    repository: bitnami/zookeeper
     tag: 3.8.1
 
